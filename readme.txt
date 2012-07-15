@@ -54,6 +54,9 @@ A: Nope!, be sure to backup your database before making massive changes to a liv
 
 == Changelog ==
 
+= 1.1 =
+* Fixed some minor warnings for menus that are empty or when the user is on the new menu tab
+
 = 1.0 =
 * Initial creation of plugin
 

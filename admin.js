@@ -12,6 +12,18 @@
         var checkSave = function(e, cb) {
             e.preventDefault();
             
+            //make sure we have an active menu
+            if ($('.nav-tab-active').text().trim() == "+") {
+                alert('Invalid menu selection. Please select an existing menu.');
+                return false;                
+            }
+            
+            //make sure the menu is populated with items 
+            if ($('.menu li').length == 0) {
+                alert("This menu is empty.  Please select a menu with one or more menu items");
+                return false;
+            }
+            
             //check for unsaved changes first because we will try to reload the page on success
             if (wpNavMenu.menusChanged && !confirm( navMenuL10n.saveAlert) ) {
                 return false;

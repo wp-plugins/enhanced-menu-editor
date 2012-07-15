@@ -6,7 +6,7 @@ Plugin URI: http://www.marcuspope.com/wordpress/
 Description: Enable enhanced menu editing options to the built-in WordPress Menus page like copying entire menus, and synchronizing menus with pages 
 Author: Marcus E. Pope, marcuspope
 Author URI: http://www.marcuspope.com
-Version: 1.0
+Version: 1.1
 
 Copyright 2011 Marcus E. Pope (email : me@marcuspope.com)
 
@@ -243,19 +243,19 @@ class emc2_enhanced_menu_walker extends Walker_Nav_Menu {
             $this->target, //new menu target
             0,
             array(
-                'menu-item-object-id' => $item->object_id,
-                'menu-item-type' => $item->type,
-                'menu-item-status' => $item->post_status,
-                'menu-item-parent-id' => @$this->assoc[$item->menu_item_parent],
-                'menu-item-position' => $item->menu_order,
-                'menu-item-object' => $item->object,
-                'menu-item-title' => $item->title,
-                'menu-item-url' => $item->url,
-                'menu-item-description' => $item->description,
-                'menu-item-attr-title' => $item->attr_title,
-                'menu-item-target' => $item->target,
-                'menu-item-classes' => $item->classes[0],
-                'menu-item-xfn' => $item->xfn
+                'menu-item-object-id' => @$item->object_id,
+                'menu-item-type' => @$item->type,
+                'menu-item-status' => @$item->post_status,
+                'menu-item-parent-id' => @$this->assoc[@$item->menu_item_parent],
+                'menu-item-position' => @$item->menu_order,
+                'menu-item-object' => @$item->object,
+                'menu-item-title' => @$item->title,
+                'menu-item-url' => @$item->url,
+                'menu-item-description' => @$item->description,
+                'menu-item-attr-title' => @$item->attr_title,
+                'menu-item-target' => @$item->target,
+                'menu-item-classes' => @$item->classes[0],
+                'menu-item-xfn' => @$item->xfn
             )
         );
     }
