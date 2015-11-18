@@ -238,7 +238,7 @@ class emc2_enhanced_menu_walker extends Walker_Nav_Menu {
         $this->target = $target_menu;
     }
 
-    function start_el(&$output, $item, $depth, $args) {
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
         $this->assoc[$item->ID] = wp_update_nav_menu_item(
             $this->target, //new menu target
             0,
